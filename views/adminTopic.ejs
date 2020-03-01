@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
     <title>Админ-панель</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -9,9 +9,11 @@
 </head>
 <body>
 <div>
-    <a href="/admin" class="btn btn-primary ml-3">Home</a>
-    <a href="/admin/add" class="btn btn-secondary ml-3">New Customer</a>
-    <a href="/admin" class="btn btn-info ml-3">Customer List</a>
+    <a href="/admin" class="btn btn-primary ml-3">Главная страница</a>
+    <a href="/admin/add" class="btn btn-secondary ml-3">Новая тема</a>
+    <a href="/adminTopic" class="btn btn-info ml-3">Список тем</a>
+    <a href="/adminSubtopic" class="btn btn-info ml-3">Список подтем</a>
+
 </div>
 <h1>Страница с темами</h1>
 <!--   <% if (messages.error) { %>
@@ -28,7 +30,7 @@
         <th scope="col">#</th>
         <th scope="col">Name</th>
         <th scope="col">Email</th>
-        <th width="200px">Action</th>
+        <th>Action</th>
 
     </tr>
     </thead>

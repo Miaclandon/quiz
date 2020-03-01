@@ -10,16 +10,15 @@ router.get('/', function(req, res, next) {
 
         if(err){
             req.flash('error', err);
-            res.render('admin/topic',{page_title:"topics - Node.js",data:''});
+            res.render('adminTopic',{page_title:"topics - Node.js",data:''});
         }else{
 
-            res.render('admin/topic',{page_title:"topics - Node.js",data:rows});
+            res.render('adminTopic',{page_title:"topics - Node.js",data:rows});
         }
 
     });
 
 });
-
 
 // SHOW ADD topic FORM
 router.get('/add', function(req, res, next){

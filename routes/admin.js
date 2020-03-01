@@ -3,12 +3,7 @@ let router = express.Router();
 let connection  = require('../lib/db');
 
 
-
-router.get('/', function (req, res, next) {
-    res.render('admin')
-
-});
-/*/!* GET home page. *!/
+/* GET home page. */
 router.get('/', function(req, res, next) {
 
     connection.query('SELECT * FROM topics ORDER BY id desc',function(err,rows)     {
@@ -34,7 +29,7 @@ router.get('/add', function(req, res, next){
         name: '',
         description: ''
     })
-})
+});
 
 // ADD NEW topic POST ACTION
 router.post('/add', function(req, res, next){
@@ -75,10 +70,10 @@ router.post('/add', function(req, res, next){
         })
         req.flash('error', error_msg)
 
-        /!**
+        /**
          * Using req.body.name
          * because req.param('name') is deprecated
-         *!/
+         */
         res.render('admin/add', {
             title: 'Add New Customer',
             name: req.body.name,
@@ -152,10 +147,10 @@ router.post('/update/:id', function(req, res, next) {
         })
         req.flash('error', error_msg)
 
-        /!**
+        /**
          * Using req.body.name
          * because req.param('name') is deprecated
-         *!/
+         */
         res.render('admin/edit', {
             title: 'Edit Customer',
             id: req.params.id,
@@ -181,7 +176,7 @@ router.get('/delete/(:id)', function(req, res, next) {
             res.redirect('/admin')
         }
     })
-})*/
+})
 
 
 module.exports = router;

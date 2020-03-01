@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
   <title>Задачник JavaScript</title>
   <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -11,5 +11,21 @@
 <div>
   <h2>Задачник JavaScript</h2>
 </div>
+  <% if(data.length){
+
+  for(var i = 0; i< data.length; i++) {%>
+    <div style="display: flex; flex-direction: row;">
+      <p><%= data[i].id%></p>
+      <p><%= data[i].name%></p>
+      <p><%= data[i].description%></p>
+    </div>
+  <% }
+
+  }else{ %>
+    <tr>
+      <td colspan="3">No user</td>
+    </tr>
+  <% } %>
+
 </body>
 </html>
