@@ -4,20 +4,34 @@ let connection  = require('../lib/db');
 
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+/* GET home page. */
+/*router.get('/', function(req, res, next) {
 
     connection.query('SELECT * FROM subtopics ORDER BY id desc',function(err,rows)     {
 
         if(err){
             req.flash('error', err);
-            res.render('adminSubtopic',{page_title:"topics - Node.js",data:''});
+            res.render('adminSubtopic',{page_title:"adminSubtopic - Node.js",data:''});
         }else{
 
-            res.render('adminSubtopic',{page_title:"topics - Node.js",data:rows});
+            res.render('adminSubtopic',{page_title:"adminSubtopic - Node.js",data:rows});
         }
 
     });
 
+});*/
+router.get('/', function (req, res) {
+    connection.query("SELECT * FROM subtopics ORDER BY idSubTopic desc", function (err,rows) {
+        if (err) return console.log(err);
+        if(err){
+            req.flash('error', err);
+            res.render('adminSubtopic',{page_title:"adminSubtopic - Node.js",data:''});
+        }else{
+
+            res.render('adminSubtopic',{page_title:"adminSubtopic - Node.js",data:rows});
+        }
+        console.log(rows);
+    })
 });
 
 // SHOW ADD topic FORM

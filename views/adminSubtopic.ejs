@@ -27,9 +27,12 @@
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th>Action</th>
+        <th scope="col">Номер темы</th>
+        <th scope="col">Название подтемы</th>
+        <th scope="col">Описание подтемы</th>
+        <th scope="col">Вопросы к подтеме</th>
+        <th scope="col">Ответы к вопросам</th>
+        <th>Действие</th>
 
     </tr>
     </thead>
@@ -39,11 +42,14 @@
     for(var i = 0; i< data.length; i++) {%>
         <tr>
             <th scope="row"><%= data[i].id%></th>
+            <td><%= data[i].idTopic%></td>
             <td><%= data[i].nameSubTopic%></td>
             <td><%= data[i].descriptionTopis%></td>
+            <td><%= data[i].questions%></td>
+            <td><%= data[i].results%></td>
             <td>
-                <a class="btn btn-success edit" href="../admin/edit/<%=data[i].id%>">Edit</a>
-                <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../admin/delete/<%=data[i].id%>">Delete</a>
+                <a class="btn btn-success edit" href="../admin/edit-subtopic/<%=data[i].idSubTopic%>">Edit</a>
+                <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../admin/delete-subtopic/<%=data[i].idSubTopic%>">Delete</a>
             </td>
         </tr>
     <% }
@@ -53,7 +59,6 @@
             <td colspan="3">No user</td>
         </tr>
     <% } %>
-
     </tbody>
 </table>
 </body>
