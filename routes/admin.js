@@ -20,7 +20,6 @@ router.get('/', function(req, res, next) {
 
 });
 
-
 // SHOW ADD topic FORM
 router.get('/add', function(req, res, next){
     // render to views/topic/add.ejs

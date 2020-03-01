@@ -35,8 +35,8 @@ router.get('/', function (req, res) {
 });
 
 // SHOW ADD topic FORM
-router.get('/add-subtopic', function(req, res, next){
-    res.render('admin/add-subtopic', {
+router.get('/addsub', function(req, res, next){
+    res.render('admin/addsub', {
         title: 'Добавление новых подтем',
         idTopic: '',
         nameSubTopic: '',
@@ -48,7 +48,7 @@ router.get('/add-subtopic', function(req, res, next){
 
 
 // ADD NEW subtopic POST ACTION
-router.post('/add-subtopic', function(req, res, next){
+router.post('/addsub', function(req, res, next){
     req.assert('idTopic', 'idTopic is required').notEmpty()//Validate idTopic
     req.assert('nameSubTopic', 'nameSubTopic is required').len(1,255)//Validate nameSubTopic
     req.assert('descriptionTopis', 'A valid descriptionTopic is required').len(1, 8000)  //Validate description
@@ -74,7 +74,7 @@ router.post('/add-subtopic', function(req, res, next){
                 req.flash('error', err)
 
                 // render to views/topic/add.ejs
-                res.render('admin/add-subtopic', {
+                res.render('admin/addsub', {
                     title: 'Добавление новой подтемы',
                     idTopic: subtopic.idTopic,
                     nameSubTopic: subtopic.nameSubTopic,
@@ -96,7 +96,7 @@ router.post('/add-subtopic', function(req, res, next){
         req.flash('error', error_msg)
 
 
-        res.render('admin/add-subtopic', {
+        res.render('admin/addsub', {
             title: 'Добавление новой подтемы',
             idTopic: subtopic.idTopic,
             nameSubTopic: subtopic.nameSubTopic,
