@@ -1,7 +1,96 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f550198f-2774-43fc-bbd6-79a01350ed26" name="Default Changelist" comment="" />
+    <list default="true" id="f550198f-2774-43fc-bbd6-79a01350ed26" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/CONTRIBUTING.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/LICENSE" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/UPGRADE_GUIDE.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/UPGRADE_GUIDE.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/check.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/check.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/check.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/check.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/one-of.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/one-of.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/one-of.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/one-of.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/runner.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/runner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/schema.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/schema.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/schema.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/schema.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/validation-chain-builders.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/validation-chain-builders.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/validation-chain-builders.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/validation-chain-builders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/validation-result.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/validation-result.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/check/validation-result.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/check/validation-result.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/api-check.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-check.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/api-filter.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-filter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/api-legacy.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-legacy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/api-sanitization-chain.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-sanitization-chain.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/api-validation-chain.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-validation-chain.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/api-validation-result.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/api-validation-result.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-custom-validators-sanitizers.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-custom-validators-sanitizers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-error-messages.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-error-messages.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-sanitization.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-sanitization.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-schema-validation.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-schema-validation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-whole-body-validation.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-whole-body-validation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-wildcards.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/feature-wildcards.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/docs/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/docs/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/filter/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/filter/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/filter/matched-data.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/matched-data.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/filter/matched-data.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/matched-data.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitization-chain-builders.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitization-chain-builders.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitization-chain-builders.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitization-chain-builders.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitize.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitize.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitize.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/filter/sanitize.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/index.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/index.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/lib/chain-creator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/chain-creator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/lib/custom-methods.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/custom-methods.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/lib/express_validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/express_validator.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/lib/legacy-runner.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/legacy-runner.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/lib/utils.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/lib/utils.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/tst.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/tst.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/utils/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/constants.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/utils/filters.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/filters.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/utils/format-param-output.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/format-param-output.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/utils/persist-values.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/persist-values.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/utils/select-fields.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/select-fields.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/utils/to-string.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/utils/to-string.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/core/Footer.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/core/Footer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/i18n/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/i18n/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/pages/en/versions.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/pages/en/versions.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/sidebars.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/sidebars.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/siteConfig.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/siteConfig.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/static/css/custom.css" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/static/css/custom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/static/img/logo.svg" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/static/img/logo.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/static/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/static/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-check.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-check.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-filter.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-filter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-legacy.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-legacy.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-sanitization-chain.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-sanitization-chain.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-validation-chain.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-validation-chain.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-validation-result.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/api-validation-result.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-custom-validators-sanitizers.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-custom-validators-sanitizers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-error-messages.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-error-messages.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-sanitization.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-sanitization.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-schema-validation.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-schema-validation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-whole-body-validation.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-whole-body-validation.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-wildcards.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/feature-wildcards.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.2.0/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/api-filter.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/api-filter.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/api-validation-chain.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/api-validation-chain.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/feature-custom-validators-sanitizers.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_docs/version-5.3.0/feature-custom-validators-sanitizers.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_sidebars/version-5.2.0-sidebars.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versioned_sidebars/version-5.2.0-sidebars.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/node_modules/express-validator/website/versions.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/express-validator/website/versions.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin.ejs" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,6 +103,9 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1YWXYxsXQTxnRljsgHA7SSkv3Br" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -22,6 +114,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../Work/Курсач Вовы/beaty-project" />
     <property name="node.js.detected.package.eslint" value="true" />
@@ -33,9 +126,14 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\expressfirst\views" />
+    <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\expressfirst\views\admin" />
+      <recent name="D:\expressfirst\views" />
+      <recent name="D:\expressfirst\routes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\expressfirst\views\admin" />
+      <recent name="D:\expressfirst\views" />
       <recent name="D:\expressfirst\views\customer" />
     </key>
   </component>
@@ -63,6 +161,7 @@
       <option name="presentableId" value="Default" />
       <updated>1583059375349</updated>
       <workItem from="1583059376504" duration="9172000" />
+      <workItem from="1583077635008" duration="1453000" />
     </task>
     <servers />
   </component>
@@ -70,10 +169,14 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583069254513">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583078126662">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583069254513" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583078126662" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583078804101">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583078804101" />
     <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1583067442261">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -90,10 +193,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583067442261" />
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583063222798">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1583079216841">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1583063222798" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583079216841" />
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583078703774">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1583078703774" />
     <state x="453" y="133" width="629" height="558" key="find.popup" timestamp="1583067565319">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

@@ -14,6 +14,8 @@ var connection  = require('./lib/db');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
+var topicRouter = require('./routes/topic');
+var subTopicRouter = require('./routes/subtopic');
 
 var app = express();
 
@@ -39,7 +41,11 @@ app.use(expressValidator());
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+
+/* админ-панель */
 app.use('/admin', adminRouter);
+app.use('/admin/topic', topicRouter);
+app.use('/admin/subtopic', subTopicRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

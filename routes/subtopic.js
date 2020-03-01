@@ -3,29 +3,24 @@ let router = express.Router();
 let connection  = require('../lib/db');
 
 
-
-router.get('/', function (req, res, next) {
-    res.render('admin')
-
-});
-/*/!* GET home page. *!/
+/* GET home page. */
 router.get('/', function(req, res, next) {
 
-    connection.query('SELECT * FROM topics ORDER BY id desc',function(err,rows)     {
+    connection.query('SELECT * FROM subtopics ORDER BY id desc',function(err,rows)     {
 
         if(err){
             req.flash('error', err);
-            res.render('admin',{page_title:"topics - Node.js",data:''});
+            res.render('admin/subtopic',{page_title:"topics - Node.js",data:''});
         }else{
 
-            res.render('admin',{page_title:"topics - Node.js",data:rows});
+            res.render('admin/subtopic',{page_title:"topics - Node.js",data:rows});
         }
 
     });
 
 });
 
-
+/*
 // SHOW ADD topic FORM
 router.get('/add', function(req, res, next){
     // render to views/topic/add.ejs
