@@ -3,11 +3,14 @@
   <component name="ChangeListManager">
     <list default="true" id="f550198f-2774-43fc-bbd6-79a01350ed26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/subtopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/subtopic.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/add.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/add.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/edit-subtopic.ejs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/edit.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adminSubtopic.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminSubtopic.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adminTopic.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminTopic.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,8 +20,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="HTML File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -35,7 +38,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/admin" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -45,17 +48,17 @@
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Work\Алиме\expressfirst\lib" />
-      <recent name="D:\Work\Алиме\expressfirst\views\admin" />
-      <recent name="D:\Work\Алиме\expressfirst\views" />
-      <recent name="D:\expressfirst\views" />
-      <recent name="D:\expressfirst\views\admin" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Work\Алиме\expressfirst\views\admin" />
       <recent name="D:\Work\Алиме\expressfirst\views" />
       <recent name="D:\Work\Алиме\expressfirst\routes" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Work\Алиме\expressfirst\views\admin" />
+      <recent name="D:\Work\Алиме\expressfirst\views" />
+      <recent name="D:\Work\Алиме\expressfirst\lib" />
+      <recent name="D:\expressfirst\views" />
+      <recent name="D:\expressfirst\views\admin" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -87,6 +90,7 @@
       <workItem from="1583091530079" duration="415000" />
       <workItem from="1583137361574" duration="5374000" />
       <workItem from="1583144296864" duration="4625000" />
+      <workItem from="1583158941215" duration="5238000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD subTopic">
       <created>1583092013600</created>
@@ -125,10 +129,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="517" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1583092208091" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583141427934">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583162183204">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583141427934" />
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583162183204" />
     <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583099281941">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

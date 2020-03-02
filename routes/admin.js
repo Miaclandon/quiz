@@ -177,5 +177,78 @@ router.get('/delete/(:id)', function(req, res, next) {
     })
 })
 
+//ADD subtopic
+router.get('/add-subtopic', function(req, res, next){
+    res.render('admin/add-subtopic', {
+        title: 'Добавить новые подтемы',
+//        idTopic: '',
+        nameSubTopic: '',
+        descriptionTopis: '',
+        questions: '',
+        results: ''
+    })
+});
 
+//action add subtopic
+router.post('/add-subtopic', function(req, res, next){
+    req.assert('idTopic', 'idTopic is require').len(1,11)     //Validate name
+    req.assert('nameSubTopic', 'nameSubTopic is required').len(1,255)
+    req.assert('descriptionTopis', 'descriptionTopis is required').len(1,8000)
+    req.assert('questions', 'questions is required').len(1,2000)
+    req.assert('results', 'results is required').len(1,2500)
+    let errors = req.validationErrors()
+
+    if( !errors ) {   //No errors were found.  Passed Validation!
+
+
+        let subtopic = {
+            idTopic: req.sanitize('idTopic').escape().trim(),
+            nameSubTopic: req.sanitize('nameSubTopic').escape().trim(),
+            descriptionTopis: req.sanitize('descriptionTopis').escape().trim(),
+            questions: req.sanitize('questions').escape().trim(),
+            results: req.sanitize('results').escape().trim()
+        }
+
+        connection.query('INSERT INTO subtopics SET ?', subtopic, function(err, result) {
+            //if(err) throw err
+            if (err) {
+                req.flash('error', err)
+
+                // render to views/topic/add.ejs
+                res.render('admin/add-subtopic', {
+                    title: 'Добавить новые подтемы',
+                    idTopic: subtopic.idTopic,
+                    nameSubTopic: subtopic.nameSubTopic,
+                    descriptionTopis: subtopic.descriptionTopis,
+                    questions: subtopic.questions,
+                    results: subtopic.results
+                })
+
+            } else {
+                req.flash('success', 'Data added successfully!');
+                res.redirect('/admin');
+            }
+        })
+    }
+    else {   //Display errors to topic
+        let error_msg = ''
+        errors.forEach(function(error) {
+            error_msg += error.msg + '<br>'
+        })
+        req.flash('error', error_msg)
+
+        /**
+         * Using req.body.name
+         * because req.param('name') is deprecated
+         */
+        res.render('admin/add-subtopic')//, {
+            // title: 'Добавить новые подтемы',
+            // idTopic: subtopic.idTopic,
+            // nameSubTopic: subtopic.nameSubTopic,
+            // descriptionTopic: subtopic.descriptionTopic,
+            // questions: subtopic.questions,
+            // results: subtopic.results
+        //})
+    }
+});
 module.exports = router;
