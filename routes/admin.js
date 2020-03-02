@@ -176,12 +176,14 @@ router.get('/delete/(:id)', function(req, res, next) {
         }
     })
 })
+// SUBTOPIC SHOW
 
 //ADD subtopic
 router.get('/add-subtopic', function(req, res, next){
     res.render('admin/add-subtopic', {
         title: 'Добавить новые подтемы',
-//        idTopic: '',
+        idSubTopic: '',
+        idTopic: '',
         nameSubTopic: '',
         descriptionTopis: '',
         questions: '',
@@ -191,6 +193,7 @@ router.get('/add-subtopic', function(req, res, next){
 
 //action add subtopic
 router.post('/add-subtopic', function(req, res, next){
+    req.assert('idSubTopic', 'idSubTopic is require').len(1,11)     //Validate name
     req.assert('idTopic', 'idTopic is require').len(1,11)     //Validate name
     req.assert('nameSubTopic', 'nameSubTopic is required').len(1,255)
     req.assert('descriptionTopis', 'descriptionTopis is required').len(1,8000)
@@ -202,6 +205,7 @@ router.post('/add-subtopic', function(req, res, next){
 
 
         let subtopic = {
+            idSubTopic: req.sanitize('idSubTopic').escape().trim(),
             idTopic: req.sanitize('idTopic').escape().trim(),
             nameSubTopic: req.sanitize('nameSubTopic').escape().trim(),
             descriptionTopis: req.sanitize('descriptionTopis').escape().trim(),
@@ -217,6 +221,7 @@ router.post('/add-subtopic', function(req, res, next){
                 // render to views/topic/add.ejs
                 res.render('admin/add-subtopic', {
                     title: 'Добавить новые подтемы',
+                    idSubTopic: subtopic.idSubTopic,
                     idTopic: subtopic.idTopic,
                     nameSubTopic: subtopic.nameSubTopic,
                     descriptionTopis: subtopic.descriptionTopis,
@@ -226,7 +231,7 @@ router.post('/add-subtopic', function(req, res, next){
 
             } else {
                 req.flash('success', 'Data added successfully!');
-                res.redirect('/admin');
+                res.redirect('/adminSubtopic');
             }
         })
     }
@@ -241,14 +246,110 @@ router.post('/add-subtopic', function(req, res, next){
          * Using req.body.name
          * because req.param('name') is deprecated
          */
-        res.render('admin/add-subtopic')//, {
-            // title: 'Добавить новые подтемы',
-            // idTopic: subtopic.idTopic,
-            // nameSubTopic: subtopic.nameSubTopic,
-            // descriptionTopic: subtopic.descriptionTopic,
-            // questions: subtopic.questions,
-            // results: subtopic.results
-        //})
+        res.render('admin/add-subtopic', {
+            title: 'Добавить новые подтемы',
+            idSubTopic: subtopic.idSubTopic,
+            idTopic: subtopic.idTopic,
+            nameSubTopic: subtopic.nameSubTopic,
+            descriptionTopis: subtopic.descriptionTopis,
+            questions: subtopic.questions,
+            results: subtopic.results
+        })
     }
 });
+
+// SHOW EDIT subtopic FORM
+router.get('/edit-subtopic/(:idSubTopic)', function(req, res, next){
+
+    connection.query('SELECT *  FROM subtopics WHERE idSubTopic = ' + req.params.idSubTopic, function(err, rows, fields) {
+        if(err) throw err
+
+        // if topic not found
+        if (rows.length <= 0) {
+            req.flash('error', 'subtopics not found with idSubTopic = ' + req.params.idSubTopic)
+            res.redirect('/adminSubtopic')
+        }
+        else { // if topic found
+            // render to views/topic/edit.ejs template file
+            res.render('admin/edit-subtopic', {
+                title: 'Редактировать подтему',
+                idSubTopic: rows[0].idSubTopic,
+                idTopic: rows[0].idTopic,
+                nameSubTopic: rows[0].nameSubTopic,
+                descriptionTopis: rows[0].descriptionTopis,
+                questions: rows[0].questions,
+                results: rows[0].results
+            })
+        }
+    })
+
+})
+
+// EDIT topic POST ACTION
+router.post('/update-subtopic/:idSubTopic', function(req, res, next) {
+    req.assert('idSubTopic', 'idSubTopic is require').len(1,11)     //Validate name
+    req.assert('idTopic', 'idTopic is require').len(1,11)     //Validate name
+    req.assert('nameSubTopic', 'nameSubTopic is required').len(1,255)
+    req.assert('descriptionTopis', 'descriptionTopis is required').len(1,8000)
+    req.assert('questions', 'questions is required').len(1,2000)
+    req.assert('results', 'results is required').len(1,2500)
+
+    let errors = req.validationErrors()
+
+    if( !errors ) {
+
+        let subtopic = {
+            idSubTopic: req.sanitize('idSubTopic').escape().trim(),
+            idTopic: req.sanitize('idTopic').escape().trim(),
+            nameSubTopic: req.sanitize('nameSubTopic').escape().trim(),
+            descriptionTopis: req.sanitize('descriptionTopis').escape().trim(),
+            questions: req.sanitize('questions').escape().trim(),
+            results: req.sanitize('results').escape().trim()
+        }
+
+        connection.query('UPDATE subtopics SET ? WHERE idSubTopic =  ' + req.params.idSubTopic, subtopic, function(err, result) {
+            //if(err) throw err
+            if (err) {
+                req.flash('error', err)
+
+                // render to views/topic/add.ejs
+                res.render('admin/edit-subtopic', {
+                    title: 'Редактирование темы',
+                    idSubTopic: req.params.idSubTopic,
+                    idTopic: req.params.idTopic,
+                    nameSubTopic: req.body.nameSubTopic,
+                    descriptionTopis: req.body.descriptionTopis,
+                    questions: req.body.questions,
+                    results: req.body.results
+                })
+            } else {
+                req.flash('success', 'Data updated successfully!');
+                res.redirect('/adminSubtopic');
+            }
+        })
+
+    }
+    else {   //Display errors to topic
+        let error_msg = ''
+        errors.forEach(function(error) {
+            error_msg += error.msg + '<br>'
+        })
+        req.flash('error', error_msg)
+
+        /**
+         * Using req.body.name
+         * because req.param('name') is deprecated
+         */
+        res.render('admin/edit-subtopic', {
+            title: 'Редактирование темы',
+            idSubTopic: req.params.idSubTopic,
+            idTopic: req.params.idTopic,
+            nameSubTopic: req.body.nameSubTopic,
+            descriptionTopis: req.body.descriptionTopis,
+            questions: req.body.questions,
+            results: req.body.results
+        })
+    }
+})
+
 module.exports = router;

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Редактирование темы</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div>
+    <a href="/admin" class="btn btn-primary ml-3">Главная страница</a>
+    <a href="/admin/add" class="btn btn-secondary ml-3">Новая тема</a>
+    <a href="/admin/add-subtopic" class="btn btn-secondary ml-3">Новая подтема</a>
+    <a href="/adminTopic" class="btn btn-info ml-3">Список тем</a>
+    <a href="/adminSubtopic" class="btn btn-info ml-3">Список подтем</a>
+</div>
+<form action="/admin/update-subtopic/<%= idSubTopic %>" method="post">
+    <div class="form-group">
+        <label for="">idTopic</label>
+        <input type="text"  name="idTopic" id="idTopic" value="<%= idTopic %>" placeholder="idTopic">
+    </div>
+    <div class="form-group">
+        <label>nameSubTopic</label>
+        <input type="text" id="nameSubTopic" name="nameSubTopic" value="<%= nameSubTopic %>" placeholder="nameSubTopic">
+    </div>
+    <div class="form-group">
+        <label for="">descriptionTopis</label>
+        <input type="text"  name="descriptionTopis" id="descriptionTopis" value="<%= descriptionTopis %>" placeholder="descriptionTopis">
+    </div>
+    <div class="form-group">
+        <label>questions</label>
+        <input type="text" id="questions" name="questions" value="<%= questions %>" placeholder="questions">
+    </div>
+    <div class="form-group">
+        <label>results</label>
+        <input type="text" id="results" name="results" value="<%= results %>" placeholder="results">
+    </div>
+    <button type="submit" class="btn btn-info">Update</button>
+</form>
+</body>
+</html>

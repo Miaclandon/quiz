@@ -17,6 +17,4 @@ router.get('/', function (req, res) {
         console.log(rows);
     })
 });
-
-
 module.exports = router;

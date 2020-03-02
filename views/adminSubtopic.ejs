@@ -16,6 +16,7 @@
     <a href="/adminSubtopic" class="btn btn-info ml-3">Список подтем</a>
 </div>
 <h1>Страница с подтемами</h1>
+<a href="/admin/add-subtopic">Создать новую тему</a>
 <!--   <% if (messages.error) { %>
   <p style="color:red"><%- messages.error %></p>
 <% } %> -->
@@ -28,6 +29,7 @@
     <thead>
     <tr>
         <th scope="col">#</th>
+        <th scope="col">Номер подтемы</th>
         <th scope="col">Номер темы</th>
         <th scope="col">Название подтемы</th>
         <th scope="col">Описание подтемы</th>
@@ -43,6 +45,7 @@
     for(var i = 0; i< data.length; i++) {%>
         <tr>
             <th scope="row"><%= data[i].id%></th>
+            <td><%= data[i].idSubTopic%></td>
             <td><%= data[i].idTopic%></td>
             <td><%= data[i].nameSubTopic%></td>
             <td><%= data[i].descriptionTopis%></td>
