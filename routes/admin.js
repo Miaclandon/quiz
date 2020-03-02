@@ -350,6 +350,23 @@ router.post('/update-subtopic/:idSubTopic', function(req, res, next) {
             results: req.body.results
         })
     }
-})
+});
+// DELETE topic
+router.get('/delete-subtopic/(:idSubTopic)', function(req, res, next) {
+    let subtopic = { idSubTopic: req.params.idSubTopic }
+
+    connection.query('DELETE FROM subtopics WHERE idSubTopic = ' + req.params.idSubTopic, subtopic, function(err, result) {
+        //if(err) throw err
+        if (err) {
+            req.flash('error', err)
+            // redirect to topics list page
+            res.redirect('/adminSubtopic')
+        } else {
+            req.flash('success', 'Customer deleted successfully! id = ' + req.params.idSubTopic)
+            // redirect to topics list page
+            res.redirect('/adminSubtopic')
+        }
+    })
+});
 
 module.exports = router;

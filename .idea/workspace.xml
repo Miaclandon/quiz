@@ -2,11 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f550198f-2774-43fc-bbd6-79a01350ed26" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/admin/edit-subtopic.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/subtopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/subtopic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/adminSubtopic.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminSubtopic.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +83,7 @@
       <workItem from="1583091530079" duration="415000" />
       <workItem from="1583137361574" duration="5374000" />
       <workItem from="1583144296864" duration="4625000" />
-      <workItem from="1583158941215" duration="8630000" />
+      <workItem from="1583158941215" duration="9194000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD subTopic">
       <created>1583092013600</created>
@@ -116,7 +113,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583164296044</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="редактирование подтем">
+      <created>1583171731970</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1583171731970</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,7 +130,8 @@
     <MESSAGE value="CRUD subTopic" />
     <MESSAGE value="registration user" />
     <MESSAGE value="form add  subtopics" />
-    <option name="LAST_COMMIT_MESSAGE" value="form add  subtopics" />
+    <MESSAGE value="редактирование подтем" />
+    <option name="LAST_COMMIT_MESSAGE" value="редактирование подтем" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583092208091">
@@ -137,10 +142,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583162183204" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583164294770">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583171730467">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583164294770" />
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583171730467" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583069254513">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -161,10 +166,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583067442261" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1583164299808">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1583171734800">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583164299808" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583171734800" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583063222798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
