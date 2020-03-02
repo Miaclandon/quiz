@@ -15,7 +15,6 @@ var indexRouter = require('./routes/index');
 var adminRouter = require('./routes/admin');
 var adminTopicRouter = require('./routes/topic');
 var adminSubtopicRouter = require('./routes/subtopic');
-var userRouter = require('./routes/user');
 
 var app = express();
 
@@ -40,9 +39,9 @@ app.use(flash());
 app.use(expressValidator());
 
 app.use('/', indexRouter);
+app.use('/admin', adminRouter);
 app.use('/adminTopic', adminTopicRouter);
 app.use('/adminSubtopic', adminSubtopicRouter);
-app.use('/user', userRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

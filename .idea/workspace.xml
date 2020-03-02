@@ -6,12 +6,8 @@
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/subtopic.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/subtopic.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/add-subtopic.ejs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/admin/add.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/add.ejs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/adminSubtopic.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminSubtopic.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/index.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/index.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +18,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JavaScript File" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -35,6 +32,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/views" />
@@ -48,14 +46,15 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Work\Алиме\expressfirst\lib" />
       <recent name="D:\Work\Алиме\expressfirst\views\admin" />
       <recent name="D:\Work\Алиме\expressfirst\views" />
       <recent name="D:\expressfirst\views" />
       <recent name="D:\expressfirst\views\admin" />
-      <recent name="D:\expressfirst\views\customer" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Work\Алиме\expressfirst\views" />
+      <recent name="D:\Work\Алиме\expressfirst\routes" />
       <recent name="D:\Work\Алиме\expressfirst\views\admin" />
     </key>
   </component>
@@ -86,6 +85,8 @@
       <workItem from="1583083554404" duration="2418000" />
       <workItem from="1583090956896" duration="496000" />
       <workItem from="1583091530079" duration="415000" />
+      <workItem from="1583137361574" duration="5374000" />
+      <workItem from="1583144296864" duration="4625000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD subTopic">
       <created>1583092013600</created>
@@ -101,7 +102,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583095028800</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="registration user">
+      <created>1583099275357</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1583099275357</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,21 +117,22 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="CRUD subTopic" />
-    <option name="LAST_COMMIT_MESSAGE" value="CRUD subTopic" />
+    <MESSAGE value="registration user" />
+    <option name="LAST_COMMIT_MESSAGE" value="registration user" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583092208091">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="517" y="202" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1583092208091" />
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583095817051">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1583141427934">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583095817051" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583095027387">
+    <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583141427934" />
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583099281941">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583095027387" />
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583099281941" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583069254513">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
