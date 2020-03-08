@@ -4,21 +4,11 @@ let router = express.Router();
 
 let connection = require('../lib/db');
 
+router.get('/', (req,res,next) => {
+    res.render('index', {title:"Страница регистрации"});
+});
+
 const user = new User();
-/* GET home page. */
-/*router.get('/', function(req, res, next) {
-  connection.query('SELECT * FROM topics ORDER BY id desc',function(err,rows)     {
-
-    if(err){
-      req.flash('error', err);
-      res.render('index',{page_title:"topics - Node.js",data:''});
-    }else{
-
-      res.render('index',{page_title:"topics - Node.js",data:rows});
-    }
-
-  });
-});*/
 
 router.get('/', (req,res,next) => {
     let user = req.session.user;
@@ -28,11 +18,11 @@ router.get('/', (req,res,next) => {
         return;
     }
     // IF not we just send the index page.
-    res.render('index', {title:"Страница регистрации"});
+    res.render('user/authorization', {title:"Страница регистрации"});
 });
 
 //get home page
-router.get('/home', (req,res,next) => {
+/*router.get('/home', (req,res,next) => {
     let user = req.session.user;
 
     if(user) {
@@ -40,6 +30,44 @@ router.get('/home', (req,res,next) => {
         return;
     }
     res.redirect('/');
+});*/
+router.get('/home', function(req, res, next) {
+    let user = req.session.user;
+
+    connection.query('SELECT topics.id, topics.name, subtopics.nameSubTopic, subtopics.descriptionTopis, subtopics.questions, subtopics.results\n' +
+        'FROM topics\n' +
+        'INNER JOIN subtopics ON topics.id = subtopics.idTopic ORDER BY id asc',function(err,rows)     {
+        if(user){
+            req.flash('error', err);
+            res.render('home', {page_title:"topics - Node.js",data:rows});
+        }else{
+
+            res.render('/');
+        }
+        console.log(rows)
+
+    });
+
+});
+//read subtopic
+router.get('/user/readSubtopic/(:idSubtopic)', function(req, res, next) {
+    let user = req.session.user;
+
+    connection.query('SELECT topics.id, topics.name, subtopics.nameSubTopic, subtopics.descriptionTopis, subtopics.questions, subtopics.results\n' +
+        'FROM topics\n' +
+        'INNER JOIN subtopics ON topics.id = subtopics.idTopic WHERE idSubTopic = ' + req.params.idSubTopic,function(err,rows)     {
+
+        if(user){
+            req.flash('error', err);
+            res.render('user/readSubtopic', {page_title:"topics - Node.js",data:rows});
+        }else{
+
+            res.render('/');
+        }
+        console.log(rows)
+
+    });
+
 });
 
 //post login data

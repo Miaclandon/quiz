@@ -5,7 +5,7 @@ let connection  = require('../lib/db');
 
 /* GET home page. */
 router.get('/', function (req, res) {
-    connection.query("SELECT * FROM subtopics ORDER BY idSubTopic desc", function (err,rows) {
+    connection.query("SELECT * FROM subtopics ORDER BY idSubTopic ASC", function (err,rows) {
         if (err) return console.log(err);
         if(err){
             req.flash('error', err);

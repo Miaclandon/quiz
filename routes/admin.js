@@ -362,11 +362,15 @@ router.get('/delete-subtopic/(:idSubTopic)', function(req, res, next) {
             // redirect to topics list page
             res.redirect('/adminSubtopic')
         } else {
-            req.flash('success', 'Customer deleted successfully! id = ' + req.params.idSubTopic)
+            req.flash('success', 'Подтема успешна удалена с  ! id = ' + req.params.idSubTopic)
             // redirect to topics list page
             res.redirect('/adminSubtopic')
         }
     })
 });
-
+//show form add test
+router.get('/add-test', function(req, res, next){
+    // render to views/topic/add.ejs
+    res.render('admin/add-test')
+});
 module.exports = router;

@@ -1,22 +1,24 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
-var expressValidator = require('express-validator');
-var flash = require('express-flash');
-var session = require('express-session');
-var bodyParser = require('body-parser');
+let createError = require('http-errors');
+let express = require('express');
+let path = require('path');
+let cookieParser = require('cookie-parser');
+let logger = require('morgan');
+let expressValidator = require('express-validator');
+let flash = require('express-flash');
+let session = require('express-session');
+let bodyParser = require('body-parser');
 
-var mysql = require('mysql');
-var connection  = require('./lib/db');
+let mysql = require('mysql');
+let connection  = require('./lib/db');
 
-var indexRouter = require('./routes/index');
-var adminRouter = require('./routes/admin');
-var adminTopicRouter = require('./routes/topic');
-var adminSubtopicRouter = require('./routes/subtopic');
+let indexRouter = require('./routes/index');
+let adminRouter = require('./routes/admin');
+let adminTopicRouter = require('./routes/topic');
+let adminSubtopicRouter = require('./routes/subtopic');
+let adminTestRouter = require('./routes/test');
 
-var app = express();
+
+let app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -42,6 +44,9 @@ app.use('/', indexRouter);
 app.use('/admin', adminRouter);
 app.use('/adminTopic', adminTopicRouter);
 app.use('/adminSubtopic', adminSubtopicRouter);
+app.use('/admin/adminTest', adminTestRouter);
+
+//using user routes
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
