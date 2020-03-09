@@ -1,1 +1,27 @@
-<h2>Авторизация админа</h2>
+<<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <title>Задачник JavaScript</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div>
+    <h2>Авторизация админа</h2>
+</div>
+<form method="post" action="/admin/adminlogin">
+    <div class="form-group">
+        <label>AdminID</label>
+        <input type="text" name="AdminID">
+    </div>
+    <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="Password" placeholder="Password">
+    </div>
+    <input type="submit" value="Login">
+</form>
+
+</body>
+</html>

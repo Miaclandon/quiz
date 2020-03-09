@@ -1,5 +1,6 @@
 let express = require('express');
 const User = require('../lib/user');
+const Admin = require('../lib/admin');
 let router = express.Router();
 
 let connection = require('../lib/db');
@@ -8,6 +9,23 @@ router.get('/', (req,res,next) => {
     res.render('index', {title:"Страница регистрации"});
 });
 
+const admin = new Admin();
+
+
+router.post('/admin/adminlogin', (req, res, next) => {
+    admin.login(req.body.AdminID, req.body.Password, function(result) {
+        if(result) {
+            // Store the user data in a session.
+            req.session.admin = result;
+            req.session.opp = 1;
+            // redirect the user to the home page.
+            res.redirect('/admin');
+        }else {
+            // if the login function returns null send this error message back to the user.
+            res.send('Username/Password incorrect!');
+        }
+    })
+});
 const user = new User();
 
 router.get('/', (req,res,next) => {
@@ -22,15 +40,6 @@ router.get('/', (req,res,next) => {
 });
 
 //get home page
-/*router.get('/home', (req,res,next) => {
-    let user = req.session.user;
-
-    if(user) {
-        res.render('home', {opp:req.session.opp, name:user.fullname});
-        return;
-    }
-    res.redirect('/');
-});*/
 router.get('/home', function(req, res, next) {
     let user = req.session.user;
 

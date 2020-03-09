@@ -28,6 +28,20 @@ router.get('/', function(req, res, next) {
 
 });
 
+router.post('/admin/adminlogin', (req, res, next) => {
+    admin.login(req.body.AdminID, req.body.Password, function(result) {
+        if(result) {
+            // Store the user data in a session.
+            req.session.admin = result;
+            req.session.opp = 1;
+            // redirect the user to the home page.
+            res.redirect('/admin');
+        }else {
+            // if the login function returns null send this error message back to the user.
+            res.send('Username/Password incorrect!');
+        }
+    })
+});
 // SHOW ADD topic FORM
 router.get('/add', function(req, res, next){
     let admin = req.session.admin;

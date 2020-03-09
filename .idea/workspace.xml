@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="f550198f-2774-43fc-bbd6-79a01350ed26" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/lib/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/adminlogin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/adminlogin.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -91,7 +93,7 @@
       <workItem from="1583441627609" duration="747000" />
       <workItem from="1583665099136" duration="3842000" />
       <workItem from="1583684126218" duration="38000" />
-      <workItem from="1583787183230" duration="1607000" />
+      <workItem from="1583787183230" duration="3192000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD subTopic">
       <created>1583092013600</created>
@@ -149,7 +151,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583668313265</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="добавлена проверка админа">
+      <created>1583788860711</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1583788860711</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -162,7 +171,8 @@
     <MESSAGE value="редактирование подтем" />
     <MESSAGE value="CRUD подтем выполнен" />
     <MESSAGE value="add admin model" />
-    <option name="LAST_COMMIT_MESSAGE" value="add admin model" />
+    <MESSAGE value="добавлена проверка админа" />
+    <option name="LAST_COMMIT_MESSAGE" value="добавлена проверка админа" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583092208091">
@@ -173,10 +183,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583162183204" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583668312188">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583788858955">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583668312188" />
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583788858955" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583684161513">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -197,10 +207,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583067442261" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1583668344396">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1583788864296">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583668344396" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583788864296" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583063222798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
