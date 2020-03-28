@@ -28,40 +28,27 @@ router.get('/', function(req, res, next) {
 
 });
 
-router.post('/admin/adminlogin', (req, res, next) => {
-    admin.login(req.body.AdminID, req.body.Password, function(result) {
-        if(result) {
-            // Store the user data in a session.
-            req.session.admin = result;
-            req.session.opp = 1;
-            // redirect the user to the home page.
-            res.redirect('/admin');
-        }else {
-            // if the login function returns null send this error message back to the user.
-            res.send('Username/Password incorrect!');
-        }
-    })
-});
+
 // SHOW ADD topic FORM
 router.get('/add', function(req, res, next){
-    let admin = req.session.admin;
-
-    // render to views/topic/add.ejs
-    if(admin){
+    // let admin = req.session.admin;
+    //
+    // // render to views/topic/add.ejs
+    // if(admin){
             res.render('admin/add', {
             title: 'Add New topics',
             name: '',
             description: ''
          })
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 });
 
 // ADD NEW topic POST ACTION
 router.post('/add', function(req, res, next){
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
         req.assert('name', 'Name is required').notEmpty()           //Validate name
         req.assert('description', 'A valid description is required').len(1, 45)  //Validate description
 
@@ -109,15 +96,15 @@ router.post('/add', function(req, res, next){
                 description: req.body.description
             })
         }
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 })
 
 // SHOW EDIT topic FORM
 router.get('/edit/(:id)', function(req, res, next){
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
 
             connection.query('SELECT * FROM topics WHERE id = ' + req.params.id, function(err, rows, fields) {
                 if(err) throw err
@@ -138,15 +125,15 @@ router.get('/edit/(:id)', function(req, res, next){
                     })
                 }
             })
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-}
+//     } else {
+//         res.render('admin/adminlogin', {title:"Страница авторизация"});
+// }
 
 })
 // EDIT topic POST ACTION
 router.post('/update/:id', function(req, res, next) {
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
         req.assert('name', 'Name is required').notEmpty()           //Validate nam           //Validate age
         req.assert('description', 'A valid description is required').notEmpty()  //Validate description
 
@@ -196,15 +183,15 @@ router.post('/update/:id', function(req, res, next) {
                 description: req.body.description
             })
         }
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 })
 
 // DELETE topic
 router.get('/delete/(:id)', function(req, res, next) {
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
         let topic = { id: req.params.id }
 
         connection.query('DELETE FROM topics WHERE id = ' + req.params.id, topic, function(err, result) {
@@ -218,16 +205,16 @@ router.get('/delete/(:id)', function(req, res, next) {
                 res.redirect('/admin')
             }
         })
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 })
 // SUBTOPIC SHOW
 
 //ADD subtopic
 router.get('/add-subtopic', function(req, res, next){
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
         res.render('admin/add-subtopic', {
             title: 'Добавить новые подтемы',
             idSubTopic: '',
@@ -237,15 +224,15 @@ router.get('/add-subtopic', function(req, res, next){
             questions: '',
             results: ''
         })
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 });
 
 //action add subtopic
 router.post('/add-subtopic', function(req, res, next){
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
         req.assert('idSubTopic', 'idSubTopic is require').len(1,11)     //Validate name
         req.assert('idTopic', 'idTopic is require').len(1,11)     //Validate name
         req.assert('nameSubTopic', 'nameSubTopic is required').len(1,255)
@@ -309,15 +296,15 @@ router.post('/add-subtopic', function(req, res, next){
                 results: subtopic.results
             })
         }
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 });
 
 // SHOW EDIT subtopic FORM
 router.get('/edit-subtopic/(:idSubTopic)', function(req, res, next){
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
 
         connection.query('SELECT *  FROM subtopics WHERE idSubTopic = ' + req.params.idSubTopic, function(err, rows, fields) {
             if(err) throw err
@@ -340,16 +327,16 @@ router.get('/edit-subtopic/(:idSubTopic)', function(req, res, next){
                 })
             }
         })
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 
 });
 
 // EDIT topic POST ACTION
 router.post('/update-subtopic/:idSubTopic', function(req, res, next) {
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
         req.assert('idSubTopic', 'idSubTopic is require').len(1,11)     //Validate name
         req.assert('idTopic', 'idTopic is require').len(1,11)     //Validate name
         req.assert('nameSubTopic', 'nameSubTopic is required').len(1,255)
@@ -413,14 +400,14 @@ router.post('/update-subtopic/:idSubTopic', function(req, res, next) {
                 results: req.body.results
             })
         }
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 });
 // DELETE topic
 router.get('/delete-subtopic/(:idSubTopic)', function(req, res, next) {
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
         let subtopic = { idSubTopic: req.params.idSubTopic }
 
         connection.query('DELETE FROM subtopics WHERE idSubTopic = ' + req.params.idSubTopic, subtopic, function(err, result) {
@@ -435,18 +422,18 @@ router.get('/delete-subtopic/(:idSubTopic)', function(req, res, next) {
                 res.redirect('/adminSubtopic')
             }
         })
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 });
 //show form add test
 router.get('/add-test', function(req, res, next){
-    let admin = req.session.admin;
-    if(admin){
+    // let admin = req.session.admin;
+    // if(admin){
     // render to views/topic/add.ejs
     res.render('admin/add-test')
-    } else {
-        res.render('admin/adminlogin', {title:"Страница авторизация"});
-    }
+    // } else {
+    //     res.render('admin/adminlogin', {title:"Страница авторизация"});
+    // }
 });
 module.exports = router;

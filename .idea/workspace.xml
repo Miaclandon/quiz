@@ -7,6 +7,8 @@
       <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/admin/adminlogin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/adminlogin.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/edit.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/error.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/error.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,7 +95,13 @@
       <workItem from="1583441627609" duration="747000" />
       <workItem from="1583665099136" duration="3842000" />
       <workItem from="1583684126218" duration="38000" />
-      <workItem from="1583787183230" duration="3192000" />
+      <workItem from="1583787183230" duration="3391000" />
+      <workItem from="1583873507026" duration="122000" />
+      <workItem from="1584393099656" duration="3460000" />
+      <workItem from="1584396808109" duration="1322000" />
+      <workItem from="1584444612556" duration="772000" />
+      <workItem from="1584448458672" duration="8000" />
+      <workItem from="1585386374959" duration="1191000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD subTopic">
       <created>1583092013600</created>
@@ -158,7 +166,14 @@
       <option name="project" value="LOCAL" />
       <updated>1583788860711</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="начало авторизации админа">
+      <created>1583790471461</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1583790471461</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -172,7 +187,8 @@
     <MESSAGE value="CRUD подтем выполнен" />
     <MESSAGE value="add admin model" />
     <MESSAGE value="добавлена проверка админа" />
-    <option name="LAST_COMMIT_MESSAGE" value="добавлена проверка админа" />
+    <MESSAGE value="начало авторизации админа" />
+    <option name="LAST_COMMIT_MESSAGE" value="начало авторизации админа" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583092208091">
@@ -183,14 +199,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1583162183204" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583788858955">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1583790468257">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583788858955" />
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1583684161513">
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1583790468257" />
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1584448463006">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1583684161513" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1584448463006" />
     <state width="1515" height="190" key="GridCell.Tab.0.bottom" timestamp="1583067442261">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -207,10 +223,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583067442261" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1583788864296">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1583790490785">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583788864296" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1583790490785" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583063222798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

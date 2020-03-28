@@ -6,14 +6,38 @@ let router = express.Router();
 let connection = require('../lib/db');
 
 router.get('/', (req,res,next) => {
-    res.render('index', {title:"Страница регистрации"});
+    res.render('index');
 });
 
 const admin = new Admin();
 
+router.post('/adminregister', (req, res, next) =>{
+    // prepare an object containing all user inputs.
+    let adminInput = {
+        adminname: req.body.adminname,
+        password: req.body.password
+    };
+    // call create function. to create a new user. if there is no error this function will return it's id.
+    admin.create(adminInput, function(lastId) {
+        // if the creation of the user goes well we should get an integer (id of the inserted user)
+        if(lastId) {
+            // Get the user data by it's id. and store it in a session.
+            user.find(lastId, function(result) {
+                req.session.admin = result;
+                req.session.opp = 0;
+                res.redirect('/admin');
+            });
 
-router.post('/admin/adminlogin', (req, res, next) => {
-    admin.login(req.body.AdminID, req.body.Password, function(result) {
+        }else {
+            console.log('Error creating a new admin ...');
+        }
+    });
+
+});
+
+
+router.post('/adminlogin', (req, res, next) => {
+    admin.login(req.body.adminname, req.body.password, function(result) {
         if(result) {
             // Store the user data in a session.
             req.session.admin = result;
@@ -26,6 +50,10 @@ router.post('/admin/adminlogin', (req, res, next) => {
         }
     })
 });
+
+//post register form
+
+
 const user = new User();
 
 router.get('/', (req,res,next) => {
@@ -68,7 +96,14 @@ router.get('/user/readSubtopic/(:idSubtopic)', function(req, res, next) {
 
         if(user){
             req.flash('error', err);
-            res.render('user/readSubtopic', {page_title:"topics - Node.js",data:rows});
+            res.render('user/readSubtopic', {
+                idSubTopic: req.params.idSubTopic,
+                idTopic: req.params.idTopic,
+                nameSubTopic: req.body.nameSubTopic,
+                descriptionTopis: req.body.descriptionTopis,
+                questions: req.body.questions,
+                results: req.body.results
+            });
         }else{
 
             res.render('/');
@@ -76,7 +111,6 @@ router.get('/user/readSubtopic/(:idSubtopic)', function(req, res, next) {
         console.log(rows)
 
     });
-
 });
 
 //post login data
