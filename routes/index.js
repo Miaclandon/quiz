@@ -90,28 +90,31 @@ router.get('/home', function(req, res, next) {
 router.get('/user/readSubtopic/(:idSubtopic)', function(req, res, next) {
     let user = req.session.user;
 
-    connection.query('SELECT topics.id, topics.name, subtopics.nameSubTopic, subtopics.descriptionTopis, subtopics.questions, subtopics.results\n' +
-        'FROM topics\n' +
-        'INNER JOIN subtopics ON topics.id = subtopics.idTopic WHERE idSubTopic = ' + req.params.idSubTopic,function(err,rows)     {
-
+    connection.query('SELECT * FROM subtopics WHERE idSubTopic = ' + req.params.idSubTopic,function(err,rows)     {
         if(user){
             req.flash('error', err);
             res.render('user/readSubtopic', {
                 idSubTopic: req.params.idSubTopic,
                 idTopic: req.params.idTopic,
-                nameSubTopic: req.body.nameSubTopic,
-                descriptionTopis: req.body.descriptionTopis,
-                questions: req.body.questions,
-                results: req.body.results
+                nameSubTopic: req.params.nameSubTopic
             });
         }else{
-
-            res.render('/');
+            res.render('/home');
         }
-        console.log(rows)
 
     });
 });
+/*
+router.get('/user/readSubtopic/(:idSubtopic)', (req, res)=>{
+    const idSubtopic = req.params.idSubTopic;
+
+    connection.query('select * from subtopics where idSubTopic = ', idSubtopic, (error, result) => {
+        if (error) throw error;
+
+        res.render('user/readSubtopic')
+    });
+});
+*/
 
 //post login data
 router.post('/login', (req, res, next) => {
