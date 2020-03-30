@@ -2,19 +2,18 @@
 <html lang="ru">
 <head>
     <title>Админ-панель</title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/navbar.css' />
 </head>
+<header>
+    <a href="/admin" class="admin_panel_main_page">Главная страница</a>
+    <a href="/admin/add" class="add_anything">Новая тема</a>
+    <a href="/admin/add-subtopic" class="add_anything">Новая подтема</a>
+    <a href="/admin/add-test" class="add_anything">Новый тест</a>
+    <a href="/adminTopic" class="list_anything">Список тем</a>
+    <a href="/adminSubtopic" class="list_anything">Список подтем</a>
+    <a href="/admin/adminTest" class="list_anything">Список тестов</a>
+</header>
 <body>
-<div>
-    <a href="/admin" class="btn btn-primary ml-3">Главная страница</a>
-    <a href="/admin/add" class="btn btn-secondary ml-3">Новая тема</a>
-    <a href="/admin/add-subtopic" class="btn btn-secondary ml-3">Новая подтема</a>
-    <a href="/adminTopic" class="btn btn-info ml-3">Список тем</a>
-    <a href="/adminSubtopic" class="btn btn-info ml-3">Список подтем</a>
-</div>
 <h1>Страница с подтемами</h1>
 <a href="/admin/add-subtopic">Создать новую тему</a>
 <!--   <% if (messages.error) { %>
