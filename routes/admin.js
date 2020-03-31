@@ -435,4 +435,6 @@ router.get('/add-test', function(req, res, next){
         res.render('admin/adminlogin', {title:"Страница авторизация"});
     }
 });
+
+
 module.exports = router;

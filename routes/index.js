@@ -51,6 +51,15 @@ router.post('/adminlogin', (req, res, next) => {
     })
 });
 
+router.get('/admin-loggout', (req, res, next) => {
+//     // Check if the session is exist
+     if(req.session.admin) {
+         // destroy the session and redirect the user to the index page.
+         req.session.destroy(function() {
+             res.redirect('/');
+         });
+     }
+ });
 //post register form
 
 
@@ -167,4 +176,5 @@ router.get('/loggout', (req, res, next) => {
         });
     }
 });
+
 module.exports = router;

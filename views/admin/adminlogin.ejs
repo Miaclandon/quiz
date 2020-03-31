@@ -1,42 +1,46 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="ru">
 <head>
     <title>Задачник JavaScript</title>
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel='stylesheet' href='/stylesheets/adminAuth.css' />
+    <script src="js/adminlogin.js"></script>
 </head>
 <body>
-<div>
-    <h2>Авторизация админа</h2>
+<div class="container-login" >
+    <div class="wrap-login">
+        <span class="login-form-title">
+                        Авторизация админа
+                    </span>
+        <form method="post" action="/adminlogin" class="login-form validate-form ">
+            <div class="wrap-input validate-input" data-validate = "Enter admin name">
+                <input class="input100" type="text" name="adminname" placeholder="Admin name">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="wrap-input validate-input" data-validate="Enter password">
+                <input class="input100" type="password" name="password" placeholder="Password">
+                <span class="focus-input100"></span>
+            </div>
+            <div class="container-login-form-btn">
+                <input type="submit" value="Login" class="login-form-btn">
+            </div>
+        </form>
+    </div>
+<!--<form method="post" action="/adminregister">-->
+<!--    <div class="form-group">-->
+<!--        <label>Username</label>-->
+<!--        <input type="text" name="adminname">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label >Password</label>-->
+<!--        <input type="password" name="password" placeholder="Password">-->
+<!--    </div>-->
+<!--    <div class="form-group">-->
+<!--        <label>Confirm password</label>-->
+<!--        <input type="password" name="confirm" placeholder="Password">-->
+<!--    </div>-->
+<!--    <input type="submit" value="Registration">-->
+<!--</form>-->
 </div>
-<form method="post" action="/adminlogin">
-    <div class="form-group">
-        <label>AdminName</label>
-        <input type="text" name="adminname">
-    </div>
-    <div class="form-group">
-        <label>Password</label>
-        <input type="password" name="password" placeholder="password">
-    </div>
-    <input type="submit" value="Login">
-</form>
-<form method="post" action="/adminregister">
-    <div class="form-group">
-        <label>Username</label>
-        <input type="text" name="adminname">
-    </div>
-    <div class="form-group">
-        <label >Password</label>
-        <input type="password" name="password" placeholder="Password">
-    </div>
-    <div class="form-group">
-        <label>Confirm password</label>
-        <input type="password" name="confirm" placeholder="Password">
-    </div>
-    <input type="submit" value="Registration">
-</form>
-
 </body>
 </html>
