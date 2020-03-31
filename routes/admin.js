@@ -497,6 +497,111 @@ router.post('/add-test', function(req, res, next){
         res.render('admin/adminlogin', {title:"Страница авторизация"});
     }
 });
+router.get('/edit-test/(:id)', function(req, res, next){
+    let admin = req.session.admin;
+    if(admin){
+
+        connection.query('SELECT * FROM tests WHERE id = ' + req.params.id, function(err, rows, fields) {
+            if(err) throw err
+
+            // if topic not found
+            if (rows.length <= 0) {
+                req.flash('error', 'tests not found with id = ' + req.params.id)
+                res.redirect('/admin/adminTest')
+            }
+            else { // if topic found
+                // render to views/topic/edit.ejs template file
+                res.render('admin/edit-test', {
+                    title: 'Edit Test',
+                    //data: rows[0],
+                    id: rows[0].id,
+                    nameTheme: rows[0].nameTheme,
+                    nameTest: rows[0].nameTest
+                })
+            }
+        })
+    } else {
+        res.render('admin/adminlogin', {title:"Страница авторизация"});
+    }
+
+})
+// EDIT topic POST ACTION
+router.post('/update-test/:id', function(req, res, next) {
+    let admin = req.session.admin;
+    if(admin){
+        req.assert('nameTheme', 'Name is required').notEmpty()           //Validate nam           //Validate age
+        req.assert('nameTest', 'A valid description is required').notEmpty()  //Validate description
+
+        let errors = req.validationErrors()
+
+        if( !errors ) {
+
+            let test = {
+                nameTheme: req.sanitize('nameTheme').escape().trim(),
+                nameTest: req.sanitize('nameTest').escape().trim()
+            }
+
+            connection.query('UPDATE tests SET ? WHERE id = ' + req.params.id, test, function(err, result) {
+                //if(err) throw err
+                if (err) {
+                    req.flash('error', err)
+
+                    // render to views/topic/add.ejs
+                    res.render('admin/edit-test', {
+                        title: 'Edit Customer',
+                        id: req.params.id,
+                        nameTheme: req.body.nameTheme,
+                        nameTest: req.body.nameTest
+                    })
+                } else {
+                    req.flash('success', 'Data updated successfully!');
+                    res.redirect('/admin/adminTest');
+                }
+            })
+
+        }
+        else {   //Display errors to topic
+            let error_msg = ''
+            errors.forEach(function(error) {
+                error_msg += error.msg + '<br>'
+            })
+            req.flash('error', error_msg)
+
+            /**
+             * Using req.body.name
+             * because req.param('name') is deprecated
+             */
+            res.render('admin/edit-test', {
+                title: 'Edit Customer',
+                id: req.params.id,
+                nameTheme: req.body.nameTheme,
+                nameTest: req.body.nameTest
+            })
+        }
+    } else {
+        res.render('admin/adminlogin', {title:"Страница авторизация"});
+    }
+});
+router.get('/delete-test/(:id)', function(req, res, next) {
+    let admin = req.session.admin;
+    if(admin){
+        let test = { id: req.params.id }
+
+        connection.query('DELETE FROM tests WHERE id = ' + req.params.id, test, function(err, result) {
+            if (err) {
+                req.flash('error', err)
+                // redirect to topics list page
+                res.redirect('/admin/adminTest')
+            } else {
+                req.flash('success', 'Customer deleted successfully! id = ' + req.params.id)
+                // redirect to topics list page
+                res.redirect('/admin')
+            }
+        })
+    } else {
+        res.render('admin/adminlogin', {title:"Страница авторизация"});
+    }
+});
 
 
 module.exports = router;
