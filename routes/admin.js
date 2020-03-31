@@ -1,5 +1,5 @@
 let express = require('express');
-const Admin = require('../lib/admin')
+const Admin = require('../lib/admin');
 let router = express.Router();
 let connection  = require('../lib/db');
 
@@ -429,8 +429,70 @@ router.get('/delete-subtopic/(:idSubTopic)', function(req, res, next) {
 //show form add test
 router.get('/add-test', function(req, res, next){
     let admin = req.session.admin;
+
+    // render to views/topic/add.ejs
     if(admin){
-        res.render('admin/add-test')
+        res.render('admin/add-test', {
+            title: 'Add New topics',
+            nameTheme: '',
+            nameTest: ''
+        })
+    } else {
+        res.render('admin/adminlogin');
+    }
+});
+
+// ADD NEW topic POST ACTION
+router.post('/add-test', function(req, res, next){
+    let admin = req.session.admin;
+    if(admin){
+        req.assert('nameTheme', 'nameTheme').len(1, 150)            //Validate name
+        req.assert('nameTest', 'nameTest').len(1, 150)  //Validate description
+
+        let errors = req.validationErrors()
+
+        if( !errors ) {   //No errors were found.  Passed Validation!
+
+
+            let test = {
+                nameTheme: req.sanitize('nameTheme').escape().trim(),
+                nameTest: req.sanitize('nameTest').escape().trim()
+            }
+
+            connection.query('INSERT INTO tests SET ?', test, function(err, result) {
+                //if(err) throw err
+                if (err) {
+                    req.flash('error', err)
+
+                    // render to views/topic/add.ejs
+                    res.render('admin/add-test', {
+                        title: 'Add New Customer',
+                        nameTheme: test.nameTheme,
+                        nameTest: test.nameTest
+                    })
+                } else {
+                    req.flash('success', 'Data added successfully!');
+                    res.redirect('/admin/adminTest');
+                }
+            })
+        }
+        else {   //Display errors to topic
+            let error_msg = ''
+            errors.forEach(function(error) {
+                error_msg += error.msg + '<br>'
+            })
+            req.flash('error', error_msg)
+
+            /**
+             * Using req.body.name
+             * because req.param('name') is deprecated
+             */
+            res.render('admin/add-test', {
+                title: 'Add New Customer',
+                nameTheme: test.nameTheme,
+                nameTest: test.nameTest
+            })
+        }
     } else {
         res.render('admin/adminlogin', {title:"Страница авторизация"});
     }

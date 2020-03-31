@@ -136,7 +136,7 @@ router.post('/login', (req, res, next) => {
             res.redirect('/home');
         }else {
             // if the login function returns null send this error message back to the user.
-            res.send('Username/Password incorrect!');
+            alert('Username/Password incorrect!');
         }
     })
 });

@@ -6,6 +6,13 @@
     <link rel='stylesheet' href='/stylesheets/adminAuth.css' />
     <script src="js/adminlogin.js"></script>
 </head>
+<script language="JavaScript">
+    if (top.location.search=="") {
+        pass = prompt('Введите пароль');
+        if (pass=='alime') // Ваш пароль акивации
+        { alert('Пароль принят') } else { alert('Пароль непринят!'), top.location.href="errorpas.htm" }//Адрес страниц на которую перейдет пользователь при ошибке
+    };
+</script>
 <body>
 <div class="container-login" >
     <div class="wrap-login">
@@ -13,14 +20,17 @@
                         Авторизация админа
                     </span>
         <form method="post" action="/adminlogin" class="login-form validate-form ">
+
             <div class="wrap-input validate-input" data-validate = "Enter admin name">
                 <input class="input100" type="text" name="adminname" placeholder="Admin name">
                 <span class="focus-input100"></span>
             </div>
+
             <div class="wrap-input validate-input" data-validate="Enter password">
                 <input class="input100" type="password" name="password" placeholder="Password">
                 <span class="focus-input100"></span>
             </div>
+
             <div class="container-login-form-btn">
                 <input type="submit" value="Login" class="login-form-btn">
             </div>
