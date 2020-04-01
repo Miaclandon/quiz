@@ -680,5 +680,78 @@ router.post('/add-test-question', function(req, res, next){
         res.render('admin/adminlogin', {title:"Страница авторизация"});
     }
 });
+router.get('/add-test-question-answer', function (req, res, next) {
+    let admin = req.session.admin;
+
+    // render to views/topic/add.ejs
+    if(admin){
+        res.render('admin/add-test-question-answer', {
+            title: 'Add New answer',
+            idQuestion: '',
+            answer: '',
+            state: ''
+        })
+    } else {
+        res.render('admin/adminlogin');
+    }
+});
+router.post('/add-test-question-answer', function(req, res, next){
+    let admin = req.session.admin;
+    if(admin){
+        req.assert('idQuestion', 'idQuestion').len(1, 25)            //Validate name
+        req.assert('answer', 'answer').len(1, 200)  //Validate description
+        req.assert('state', 'state').isBoolean() //Validate description
+
+        let errors = req.validationErrors()
+
+        if( !errors ) {   //No errors were found.  Passed Validation!
+
+
+            let answer = {
+                idQuestion: req.sanitize('idQuestion').escape().trim(),
+                answer: req.sanitize('answer').escape().trim(),
+                state: req.sanitize('state').escape().trim()
+            }
+
+            connection.query('INSERT INTO answers SET ?', answer, function(err, result) {
+                //if(err) throw err
+                if (err) {
+                    req.flash('error', err)
+
+                    // render to views/topic/add.ejs
+                    res.render('admin/add-test-question', {
+                        title: 'Add New Customer',
+                        idQuestion: answer.idQuestion,
+                        answer: answer.answer,
+                        state: answer.state
+                    })
+                } else {
+                    req.flash('success', 'Data added successfully!');
+                    res.redirect('/admin/adminTest');
+                }
+            })
+        }
+        else {   //Display errors to topic
+            let error_msg = ''
+            errors.forEach(function(error) {
+                error_msg += error.msg + '<br>'
+            })
+            req.flash('error', error_msg)
+
+            /**
+             * Using req.body.name
+             * because req.param('name') is deprecated
+             */
+            res.render('admin/add-test-question-answer', {
+                title: 'Add New Customer',
+                idQuestion: answer.idQuestion,
+                answer: answer.answer,
+                state: answer.state
+            })
+        }
+    } else {
+        res.render('admin/adminlogin', {title:"Страница авторизация"});
+    }
+});
 
 module.exports = router;
