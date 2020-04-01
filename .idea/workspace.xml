@@ -2,8 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f550198f-2774-43fc-bbd6-79a01350ed26" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/stylesheets/adminAdd.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/views/admin/add-test-question.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/admin.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/add.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/add.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/edit-subtopic.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/edit-subtopic.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/admin/edit.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/admin/edit.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adminSubtopic.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminSubtopic.ejs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/adminTopic.ejs" beforeDir="false" afterPath="$PROJECT_DIR$/views/adminTopic.ejs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,8 +22,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="HTML File" />
-        <option value="CSS File" />
         <option value="JavaScript File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -104,7 +112,7 @@
       <workItem from="1585574578415" duration="6429000" />
       <workItem from="1585586579855" duration="58000" />
       <workItem from="1585659741560" duration="6736000" />
-      <workItem from="1585676531104" duration="7319000" />
+      <workItem from="1585676531104" duration="13803000" />
     </task>
     <task id="LOCAL-00001" summary="CRUD subTopic">
       <created>1583092013600</created>
@@ -218,7 +226,14 @@
       <option name="project" value="LOCAL" />
       <updated>1585689189948</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="crud тестов">
+      <created>1585691197872</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1585691197872</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -237,7 +252,8 @@
     <MESSAGE value="начало тестов" />
     <MESSAGE value="начало стилизации админ-панели" />
     <MESSAGE value="Начало разработки тестов" />
-    <option name="LAST_COMMIT_MESSAGE" value="Начало разработки тестов" />
+    <MESSAGE value="crud тестов" />
+    <option name="LAST_COMMIT_MESSAGE" value="crud тестов" />
   </component>
   <component name="WindowStateProjectService">
     <state x="517" y="202" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1583092208091">
@@ -248,10 +264,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="499" y="159" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1585687674743" />
-    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1585689188620">
+    <state x="391" y="0" key="CommitChangelistDialog2" timestamp="1585691196234">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585689188620" />
+    <state x="391" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1585691196234" />
     <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1584448463006">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -272,10 +288,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state width="1515" height="190" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1583067442261" />
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1585689200719">
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2" timestamp="1585691201410">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585689200719" />
+    <state x="361" y="141" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1585691201410" />
     <state x="93" y="93" width="1350" height="638" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1583063222798">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

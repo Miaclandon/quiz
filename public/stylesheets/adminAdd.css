@@ -1,0 +1,52 @@
+body{
+    font-family: Bahnschrift;
+}
+.block_content{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.form-group-create{
+    display: flex;
+    justify-content: center;
+    background-color: white;
+    margin: 50px;
+    padding: 30px;
+}
+.content-form-group{
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 50px;
+    border-radius: 10px;
+}
+.content-form-group h1{
+    margin-bottom: -50px;
+    text-align: center;
+}
+.form-group{
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    justify-content: center;
+}
+.form-group input{
+    padding: 10px;
+    width: 350px;
+}
+.form-group-button input{
+    outline: none;
+    display: inline-block;
+    color: white;
+    padding: 5px 10px;
+    margin: 10px 110px;
+    border-radius: 10px;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    background-image: linear-gradient(to right, #9EEFE1 0%, #4830F0 51%, #9EEFE1 100%);
+    background-size: 200% auto;
+    box-shadow: 0 0 20px rgba(0,0,0,.1);
+    transition: .5s;
+}
+.form-group-button input:hover {background-position:  center;}

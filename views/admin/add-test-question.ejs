@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Добавления нового теста</title>
+    <link rel='stylesheet' href='/stylesheets/navbar.css' />
+    <link rel='stylesheet' href='/stylesheets/adminAdd.css' />
+</head>
+<header>
+    <a href="/admin" class="admin_panel_main_page">Главная страница</a>
+    <a href="/admin/add" class="add_anything">Новая тема</a>
+    <a href="/admin/add-subtopic" class="add_anything">Новая подтема</a>
+    <a href="/admin/add-test" class="add_anything">Новый тест</a>
+    <a href="/admin/add-test-question" class="add_anything">Вопросы к тесту</a>
+    <a href="/adminTopic" class="list_anything">Список тем</a>
+    <a href="/adminSubtopic" class="list_anything">Список подтем</a>
+    <a href="/admin/adminTest" class="list_anything">Список тестов</a>
+</header>
+<body>
+<% if (messages.error) { %>
+    <p style="color:red"><%- messages.error %></p>
+<% } %>
+
+<% if (messages.success) { %>
+    <p style="color:green"><%- messages.success %></p>
+<% } %>
+<div class="block_content">
+    <div class="content-form-group">
+    <h1>Вопросы к тесту</h1>
+        <div class="form-group-create">
+            <form method="post" action="/admin/add-test-question">
+                <div class="form-group">
+                    <label>Номер вопроса</label>
+                    <input type="text" name="idQuestion">
+                </div>
+                <div class="form-group">
+                    <label>Номер теста</label>
+                    <input type="text" name="idTest">
+                </div>
+                <div class="form-group">
+                    <label>Вопрос</label>
+                    <input type="text" name="question">
+                </div>
+                <div class="form-group-button">
+                    <input type="submit" value="Добавить" class="login-form-btn">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+</html>
