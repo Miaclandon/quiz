@@ -3,6 +3,8 @@
 <head>
     <title>Админ-панель</title>
     <link rel='stylesheet' href='/stylesheets/navbar.css' />
+    <link rel='stylesheet' href='/stylesheets/adminList.css' />
+    <link rel='stylesheet' href='/stylesheets/adminTheme.css' />
 </head>
 <header>
     <a href="/admin" class="admin_panel_main_page">Главная страница</a>
@@ -15,7 +17,6 @@
     <a href="/admin/adminTest" class="list_anything">Список тестов</a>
 </header>
 <body>
-<h1>Страница с темами</h1>
 <!--   <% if (messages.error) { %>
   <p style="color:red"><%- messages.error %></p>
 <% } %> -->
@@ -23,14 +24,17 @@
 <% if (messages.success) { %>
     <p class="alert alert-success mt-4"><%- messages.success %></p>
 <% } %>
-<br>
-<table class="table">
+<div class="block_container_content">
+<div class="block_content">
+    <h1>Список тем</h1>
+    <a href="/admin/add">Создать новую тему</a>
+<table class="table"  align="center">
     <thead>
     <tr>
         <th scope="col">#</th>
-        <th scope="col">Name</th>
-        <th scope="col">Email</th>
-        <th>Action</th>
+        <th scope="col">Название</th>
+        <th scope="col">Описание</th>
+        <th>Действие</th>
 
     </tr>
     </thead>
@@ -43,8 +47,8 @@
             <td><%= data[i].name%></td>
             <td><%= data[i].description%></td>
             <td>
-                <a class="btn btn-success edit" href="../admin/edit/<%=data[i].id%>">Edit</a>
-                <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../admin/delete/<%=data[i].id%>">Delete</a>
+                <a class="edit" href="../admin/edit/<%=data[i].id%>">Редактировать</a>
+                <a class="delete" onclick="return alert('Are You sure?')" href="../admin/delete/<%=data[i].id%>">Удалить</a>
             </td>
         </tr>
     <% }
@@ -57,5 +61,7 @@
 
     </tbody>
 </table>
+</div>
+</div>
 </body>
 </html>

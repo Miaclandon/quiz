@@ -3,6 +3,7 @@
 <head>
     <title>Админ-панель</title>
     <link rel='stylesheet' href='/stylesheets/navbar.css' />
+    <link rel='stylesheet' href='/stylesheets/adminList.css' />
 </head>
 <header>
     <a href="/admin" class="admin_panel_main_page">Главная страница</a>
@@ -15,8 +16,6 @@
     <a href="/admin/adminTest" class="list_anything">Список тестов</a>
 </header>
 <body>
-<h1>Страница с подтемами</h1>
-<a href="/admin/add-subtopic">Создать новую тему</a>
 <!--   <% if (messages.error) { %>
   <p style="color:red"><%- messages.error %></p>
 <% } %> -->
@@ -24,46 +23,47 @@
 <% if (messages.success) { %>
     <p class="alert alert-success mt-4"><%- messages.success %></p>
 <% } %>
-<br>
-<table class="table">
-    <thead>
-    <tr>
-        <th scope="col">#</th>
-        <th scope="col">Номер подтемы</th>
-        <th scope="col">Номер темы</th>
-        <th scope="col">Название подтемы</th>
-        <th scope="col">Описание подтемы</th>
-        <th scope="col">Вопросы к подтеме</th>
-        <th scope="col">Ответы к вопросам</th>
-        <th>Действие</th>
-
-    </tr>
-    </thead>
-    <tbody>
-    <% if(data.length){
-
-    for(var i = 0; i< data.length; i++) {%>
+<div class="block_content">
+    <h1>Список подтем</h1>
+    <a href="/admin/add-subtopic">Создать новую подтему</a>
+    <table class="table">
+        <thead>
         <tr>
-            <th scope="row"><%= data[i].id%></th>
-            <td><%= data[i].idSubTopic%></td>
-            <td><%= data[i].idTopic%></td>
-            <td><%= data[i].nameSubTopic%></td>
-            <td><%= data[i].descriptionTopis%></td>
-            <td><%= data[i].questions%></td>
-            <td><%= data[i].results%></td>
-            <td>
-                <a class="btn btn-success edit" href="../admin/edit-subtopic/<%=data[i].idSubTopic%>">Edit</a>
-                <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../admin/delete-subtopic/<%=data[i].idSubTopic%>">Delete</a>
-            </td>
-        </tr>
-    <% }
+            <th scope="col">#</th>
+            <th scope="col">Номер подтемы</th>
+            <th scope="col">Номер темы</th>
+            <th scope="col">Название подтемы</th>
+            <th scope="col">Описание подтемы</th>
+            <th scope="col">Вопросы к подтеме</th>
+            <th scope="col">Ответы к вопросам</th>
+            <th>Действие</th>
 
-    }else{ %>
-        <tr>
-            <td colspan="3">No user</td>
         </tr>
-    <% } %>
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+        <% if(data.length){
+        for(var i = 0; i< data.length; i++) {%>
+            <tr>
+                <th scope="row"><%= data[i].id%></th>
+                <td><%= data[i].idSubTopic%></td>
+                <td><%= data[i].idTopic%></td>
+                <td><%= data[i].nameSubTopic%></td>
+                <td><%= data[i].descriptionTopis%></td>
+                <td><%= data[i].questions%></td>
+                <td><%= data[i].results%></td>
+                <td>
+                    <a class="edit" href="../admin/edit-subtopic/<%=data[i].idSubTopic%>">Редактировать</a>
+                    <a class="delete" onclick="return alert('Are You sure?')" href="../admin/delete-subtopic/<%=data[i].idSubTopic%>">Удалить</a>
+                </td>
+            </tr>
+        <% }
+        }else{ %>
+            <tr>
+                <td colspan="3">No user</td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
+</div>
 </body>
 </html>

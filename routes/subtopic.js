@@ -3,6 +3,7 @@ let router = express.Router();
 let connection  = require('../lib/db');
 
 
+
 /* GET home page. */
 router.get('/', function (req, res) {
     connection.query("SELECT * FROM subtopics ORDER BY idSubTopic ASC", function (err,rows) {

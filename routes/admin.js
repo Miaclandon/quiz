@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     let admin = req.session.admin;
 
 
-    connection.query('SELECT * FROM topics ORDER BY id desc',function(err,rows)     {
+    connection.query('SELECT * FROM topics ORDER BY id asc',function(err,rows)     {
 
         if(admin){
             if(err){
