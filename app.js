@@ -16,7 +16,8 @@ let adminRouter = require('./routes/admin');
 let adminTopicRouter = require('./routes/topic');
 let adminSubtopicRouter = require('./routes/subtopic');
 let adminTestRouter = require('./routes/test');
-
+let adminAddTestRouter = require('./routes/addTest');
+let adminAddTestQuestionRouter = require('./routes/addQuestion');
 
 let app = express();
 
@@ -45,6 +46,8 @@ app.use('/admin', adminRouter);
 app.use('/adminTopic', adminTopicRouter);
 app.use('/adminSubtopic', adminSubtopicRouter);
 app.use('/admin/adminTest', adminTestRouter);
+app.use('/add-test', adminAddTestRouter);
+app.use('/add-test-question', adminAddTestQuestionRouter);
 
 //using user routes
 

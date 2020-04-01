@@ -50,3 +50,6 @@ body{
     transition: .5s;
 }
 .form-group-button input:hover {background-position:  center;}
+ table{
+     background-color: white;
+ }

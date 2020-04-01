@@ -36,21 +36,32 @@
             </div>
         </form>
     </div>
-<!--<form method="post" action="/adminregister">-->
-<!--    <div class="form-group">-->
-<!--        <label>Username</label>-->
-<!--        <input type="text" name="adminname">-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--        <label >Password</label>-->
-<!--        <input type="password" name="password" placeholder="Password">-->
-<!--    </div>-->
-<!--    <div class="form-group">-->
-<!--        <label>Confirm password</label>-->
-<!--        <input type="password" name="confirm" placeholder="Password">-->
-<!--    </div>-->
-<!--    <input type="submit" value="Registration">-->
-<!--</form>-->
+    <div class="wrap-login">
+        <span class="login-form-title">
+                        Регистрация админа
+                    </span>
+        <form method="post" action="/adminregister" class="login-form validate-form ">
+
+            <div class="wrap-input validate-input" data-validate = "Enter admin name">
+                <input class="input100" type="text" name="adminname" placeholder="Admin name">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input validate-input" data-validate="Enter password">
+                <input class="input100" type="password" name="password" placeholder="Password">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="wrap-input validate-input" data-validate="Enter password">
+                <input class="input100" type="password" name="confirm" placeholder="Password">
+                <span class="focus-input100"></span>
+            </div>
+
+            <div class="container-login-form-btn">
+                <input type="submit" value="Registration" class="login-form-btn">
+            </div>
+        </form>
+    </div>
 </div>
 </body>
 </html>

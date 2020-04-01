@@ -4,13 +4,14 @@
     <title>Добавления нового теста</title>
     <link rel='stylesheet' href='/stylesheets/navbar.css' />
     <link rel='stylesheet' href='/stylesheets/adminAdd.css' />
+    <link rel='stylesheet' href='/stylesheets/adminList.css' />
 </head>
 <header>
     <a href="/admin" class="admin_panel_main_page">Главная страница</a>
     <a href="/admin/add" class="add_anything">Новая тема</a>
     <a href="/admin/add-subtopic" class="add_anything">Новая подтема</a>
-    <a href="/admin/add-test" class="add_anything">Новый тест</a>
-    <a href="/admin/add-test-question" class="add_anything">Вопросы к тесту</a>
+    <a href="/add-test" class="add_anything">Новый тест</a>
+    <a href="/add-test-question" class="add_anything">Вопросы к тесту</a>
     <a href="/adminTopic" class="list_anything">Список тем</a>
     <a href="/adminSubtopic" class="list_anything">Список подтем</a>
     <a href="/admin/adminTest" class="list_anything">Список тестов</a>
@@ -46,6 +47,38 @@
             </form>
         </div>
     </div>
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">№ вопроса</th>
+            <th scope="col">№ теста</th>
+            <th scope="col">Вопрос</th>
+            <th>Действие</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <% if(data.length){
+
+        for(var i = 0; i< data.length; i++) {%>
+            <tr>
+                <th scope="row"><%= data[i].idQuestion%></th>
+                <td ><%= data[i].idTest%></td>
+                <td><%= data[i].question%></td>
+                <td>
+                    <a class="btn btn-success edit" href="../admin/edit-test/<%=data[i].id%>">Edit</a>
+                    <a class="btn btn-danger delete" onclick="return alert('Are You sure?')" href="../admin/delete-test/<%=data[i].id%>">Delete</a>
+                </td>
+            </tr>
+        <% }
+
+        }else{ %>
+            <tr>
+                <td colspan="3">Нет тестов</td>
+            </tr>
+        <% } %>
+        </tbody>
+    </table>
 </div>
 </body>
 </html>

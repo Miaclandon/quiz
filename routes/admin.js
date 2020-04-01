@@ -10,7 +10,7 @@ router.get('/', function(req, res, next) {
     let admin = req.session.admin;
 
 
-    connection.query('SELECT * FROM topics ORDER BY id asc',function(err,rows)     {
+    connection.query('SELECT * FROM admins ORDER BY id asc',function(err,rows)     {
 
         if(admin){
             if(err){
@@ -23,7 +23,7 @@ router.get('/', function(req, res, next) {
         } else {
             res.render('admin/adminlogin', {title:"Страница авторизация"});
         }
-
+console.log(rows);
     });
 
 });
@@ -426,13 +426,25 @@ router.get('/delete-subtopic/(:idSubTopic)', function(req, res, next) {
         res.render('admin/adminlogin', {title:"Страница авторизация"});
     }
 });
-//show form add test
+router.get('/', function (req, res) {
+    connection.query("SELECT * FROM tests ORDER BY id ASC", function (err,rows) {
+        if (err) return console.log(err);
+        if(err){
+            req.flash('error', err);
+            res.render('admin/add-test',{data:''});
+        }else{
+            res.render('admin/add-test',{data:rows});
+        }
+        console.log(rows);
+    })
+});
+// show form add test
 router.get('/add-test', function(req, res, next){
     let admin = req.session.admin;
 
     // render to views/topic/add.ejs
     if(admin){
-        res.render('admin/add-test', {
+        res.render('add-test', {
             title: 'Add New topics',
             nameTheme: '',
             nameTest: ''
@@ -465,7 +477,7 @@ router.post('/add-test', function(req, res, next){
                     req.flash('error', err)
 
                     // render to views/topic/add.ejs
-                    res.render('admin/add-test', {
+                    res.render('add-test', {
                         title: 'Add New Customer',
                         nameTheme: test.nameTheme,
                         nameTest: test.nameTest
@@ -487,7 +499,7 @@ router.post('/add-test', function(req, res, next){
              * Using req.body.name
              * because req.param('name') is deprecated
              */
-            res.render('admin/add-test', {
+            res.render('add-test', {
                 title: 'Add New Customer',
                 nameTheme: test.nameTheme,
                 nameTest: test.nameTest
@@ -498,91 +510,91 @@ router.post('/add-test', function(req, res, next){
     }
 });
 // SHOW EDIT topic FORM
-// router.get('/edit-test/(:id)', function(req, res, next){
-//     let admin = req.session.admin;
-//     if(admin){
-//
-//         connection.query('SELECT * FROM tests WHERE id = ' + req.params.id, function(err, rows, fields) {
-//             if(err) throw err
-//
-//             // if topic not found
-//             if (rows.length <= 0) {
-//                 req.flash('error', 'tests not found with id = ' + req.params.id)
-//                 res.redirect('/admin/adminTest')
-//             }
-//             else { // if topic found
-//                 // render to views/topic/edit.ejs template file
-//                 res.render('admin/edit', {
-//                     title: 'Edit Customer',
-//                     //data: rows[0],
-//                     id: rows[0].id,
-//                     nameTheme: rows[0].nameTheme,
-//                     nameTest: rows[0].nameTest
-//                 })
-//             }
-//         })
-//     } else {
-//         res.render('admin/adminlogin', {title:"Страница авторизация"});
-//     }
-//
-// });
-// // EDIT topic POST ACTION
-// router.post('/update-test/:id', function(req, res, next) {
-//     let admin = req.session.admin;
-//     if(admin){
-//         req.assert('nameTheme', 'nameTheme').notEmpty()           //Validate nam           //Validate age
-//         req.assert('nameTest', 'nameTest').notEmpty()  //Validate description
-//
-//         let errors = req.validationErrors()
-//
-//         if( !errors ) {
-//
-//             let topic = {
-//                 nameTheme: req.sanitize('nameTheme').escape().trim(),
-//                 nameTest: req.sanitize('nameTest').escape().trim()
-//             }
-//
-//             connection.query('UPDATE tests SET ? WHERE id = ' + req.params.id, topic, function(err, result) {
-//                 //if(err) throw err
-//                 if (err) {
-//                     req.flash('error', err)
-//
-//                     // render to views/topic/add.ejs
-//                     res.render('admin/edit-test', {
-//                         title: 'Edit Test',
-//                         id: req.params.id,
-//                         nameTheme: req.body.nameTheme,
-//                         nameTest: req.body.nameTest
-//                     })
-//                 } else {
-//                     req.flash('success', 'Data updated successfully!');
-//                     res.redirect('/admin/adminTest');
-//                 }
-//             })
-//
-//         }
-//         else {   //Display errors to topic
-//             let error_msg = ''
-//             errors.forEach(function(error) {
-//                 error_msg += error.msg + '<br>'
-//             })
-//             req.flash('error', error_msg)
-//
-//             /**
-//              * Using req.body.name
-//              * because req.param('name') is deprecated
-//              */
-//             res.render('admin/edit-test', {
-//                 title: 'Edit Test',
-//                 id: req.params.id,
-//                 nameTheme: req.body.nameTheme,
-//                 nameTest: req.body.nameTest
-//             })
-//         }
-//     } else {
-//         res.render('admin/adminlogin', {title:"Страница авторизация"});
-//     }
-// });
+router.get('/edit-test/(:id)', function(req, res, next){
+    let admin = req.session.admin;
+    if(admin){
+
+        connection.query('SELECT * FROM tests WHERE id = ' + req.params.id, function(err, rows, fields) {
+            if(err) throw err
+
+            // if topic not found
+            if (rows.length <= 0) {
+                req.flash('error', 'tests not found with id = ' + req.params.id)
+                res.redirect('/admin/adminTest')
+            }
+            else { // if topic found
+                // render to views/topic/edit.ejs template file
+                res.render('admin/edit', {
+                    title: 'Edit Customer',
+                    //data: rows[0],
+                    id: rows[0].id,
+                    nameTheme: rows[0].nameTheme,
+                    nameTest: rows[0].nameTest
+                })
+            }
+        })
+    } else {
+        res.render('admin/adminlogin', {title:"Страница авторизация"});
+    }
+
+});
+// EDIT topic POST ACTION
+router.post('/update-test/:id', function(req, res, next) {
+    let admin = req.session.admin;
+    if(admin){
+        req.assert('nameTheme', 'nameTheme').notEmpty()           //Validate nam           //Validate age
+        req.assert('nameTest', 'nameTest').notEmpty()  //Validate description
+
+        let errors = req.validationErrors()
+
+        if( !errors ) {
+
+            let topic = {
+                nameTheme: req.sanitize('nameTheme').escape().trim(),
+                nameTest: req.sanitize('nameTest').escape().trim()
+            }
+
+            connection.query('UPDATE tests SET ? WHERE id = ' + req.params.id, topic, function(err, result) {
+                //if(err) throw err
+                if (err) {
+                    req.flash('error', err)
+
+                    // render to views/topic/add.ejs
+                    res.render('admin/edit-test', {
+                        title: 'Edit Test',
+                        id: req.params.id,
+                        nameTheme: req.body.nameTheme,
+                        nameTest: req.body.nameTest
+                    })
+                } else {
+                    req.flash('success', 'Data updated successfully!');
+                    res.redirect('/admin/adminTest');
+                }
+            })
+
+        }
+        else {   //Display errors to topic
+            let error_msg = ''
+            errors.forEach(function(error) {
+                error_msg += error.msg + '<br>'
+            })
+            req.flash('error', error_msg)
+
+            /**
+             * Using req.body.name
+             * because req.param('name') is deprecated
+             */
+            res.render('admin/edit-test', {
+                title: 'Edit Test',
+                id: req.params.id,
+                nameTheme: req.body.nameTheme,
+                nameTest: req.body.nameTest
+            })
+        }
+    } else {
+        res.render('admin/adminlogin', {title:"Страница авторизация"});
+    }
+});
 
 router.get('/delete-test/(:id)', function(req, res, next) {
     let admin = req.session.admin;
@@ -595,7 +607,7 @@ router.get('/delete-test/(:id)', function(req, res, next) {
                 // redirect to topics list page
                 res.redirect('/admin/adminTest')
             } else {
-                req.flash('success', 'Customer deleted successfully! id = ' + req.params.id)
+                req.flash('success', 'Deleted successfully! id = ' + req.params.id)
                 // redirect to topics list page
                 res.redirect('/admin')
             }
@@ -654,7 +666,7 @@ router.post('/add-test-question', function(req, res, next){
                     })
                 } else {
                     req.flash('success', 'Data added successfully!');
-                    res.redirect('/admin/adminTest');
+                    res.redirect('/add-test-question');
                 }
             })
         }

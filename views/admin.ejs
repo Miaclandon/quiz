@@ -3,20 +3,60 @@
 <head>
     <title>Админ-панель</title>
     <link rel='stylesheet' href='/stylesheets/admin.css' />
+    <link rel='stylesheet' href='/stylesheets/adminList.css' />
+    <link rel='stylesheet' href='/stylesheets/adminTheme.css' />
     <link rel='stylesheet' href='/stylesheets/navbar.css' />
 </head>
 <header>
     <a href="/admin" class="admin_panel_main_page">Главная страница</a>
     <a href="/admin/add" class="add_anything">Новая тема</a>
     <a href="/admin/add-subtopic" class="add_anything">Новая подтема</a>
-    <a href="/admin/add-test" class="add_anything">Новый тест</a>
-    <a href="/admin/add-test-question" class="add_anything">Вопросы к тесту</a>
+    <a href="/add-test" class="add_anything">Новый тест</a>
+    <a href="/add-test-question" class="add_anything">Вопросы к тесту</a>
     <a href="/admin/add-test-question-answer" class="add_anything">Ответы к тестам</a>
     <a href="/adminTopic" class="list_anything">Список тем</a>
     <a href="/adminSubtopic" class="list_anything">Список подтем</a>
     <a href="/admin/adminTest" class="list_anything">Список тестов</a>
-    <a href="/" class="admin_panel_main_page">Loggout </a>
+    <a href="/" class="admin_panel_main_page">Выйти</a>
 </header>
 <body>
+<!--   <% if (messages.error) { %>
+  <p style="color:red"><%- messages.error %></p>
+<% } %> -->
+
+<% if (messages.success) { %>
+    <p class="alert alert-success mt-4"><%- messages.success %></p>
+<% } %>
+<div class="block_container_content">
+    <div class="block_content">
+        <h1>Список админов</h1>
+        <table class="table"  align="center">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Никнейм</th>
+
+            </tr>
+            </thead>
+            <tbody>
+            <% if(data.length){
+
+            for(var i = 0; i< data.length; i++) {%>
+                <tr>
+                    <th scope="row"><%= data[i].id%></th>
+                    <td><%= data[i].adminname%></td>
+                </tr>
+            <% }
+
+            }else{ %>
+                <tr>
+                    <td colspan="3">No user</td>
+                </tr>
+            <% } %>
+
+            </tbody>
+        </table>
+    </div>
+</div>
 </body>
 </html>
