@@ -18,6 +18,8 @@ let adminSubtopicRouter = require('./routes/subtopic');
 let adminTestRouter = require('./routes/test');
 let adminAddTestRouter = require('./routes/addTest');
 let adminAddTestQuestionRouter = require('./routes/addQuestion');
+let userReadSubtopicRouter = require('./routes/readSubtopic');
+let userAuthRouter = require('./routes/userAuth');
 
 let app = express();
 
@@ -48,6 +50,8 @@ app.use('/adminSubtopic', adminSubtopicRouter);
 app.use('/admin/adminTest', adminTestRouter);
 app.use('/add-test', adminAddTestRouter);
 app.use('/add-test-question', adminAddTestQuestionRouter);
+app.use('/user/readSubtopic/(:idSubtopic)', userReadSubtopicRouter);
+app.use('/userAuth', userAuthRouter);
 
 //using user routes
 
